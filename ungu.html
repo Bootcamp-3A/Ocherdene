@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color</title>
+  </head>
+  <style>
+    .fatherdiv {
+      height: 300px;
+      width: 300px;
+      background-color: aqua;
+    }
+  </style>
+  <body>
+    <button>Random color</button>
+    <script>
+      let hexColors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
+      let body = document.querySelector("body");
+      let div = document.createElement("div");
+
+      div.className = "fatherdiv";
+      let button = document.querySelector("button");
+      count = 0;
+      button.addEventListener("click", () => {
+        div.style.backgroundColor = hexColors[count];
+        count++;
+        if (count > hexColors.length - 1) {
+          count = 0;
+        }
+      });
+
+      body.appendChild(div);
+      body.appendChild(button);
+    </script>
+  </body>
+</html>

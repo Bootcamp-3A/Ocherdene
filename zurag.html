@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .fatherdiv {
+      height: 300px;
+      width: 300px;
+    }
+  </style>
+  <body>
+    <script>
+      let body = document.querySelector("body");
+
+      let img = document.createElement("img");
+      img.src = "zurag1.jpg";
+
+      let button = document.createElement("button");
+      button.innerText = "Gerliig asaay";
+      let ison = true;
+      button.addEventListener("click", () => {
+        ison = !ison;
+        button.innerText = ison ? "Gerliig asaay" : "Gerliig untraay";
+
+        if (ison) {
+          img.src = "zurag1.jpg";
+        } else {
+          img.src = "zurag2.jpg";
+        }
+      });
+
+      body.appendChild(img);
+
+      body.appendChild(button);
+    </script>
+  </body>
+</html>
