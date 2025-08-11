@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+  </head>
+  <body>
+    <span id="timer">00</span>
+    <button id="startbtn">Start</button>
+    <button>Stop</button>
+    <button>Reset</button>
+    <script>
+      let button = document.getElementById("startbtn");
+      let timer = document.getElementById("timer");
+      let count = "00";
+
+      button.addEventListener("click", () => {
+        timer = true;
+
+        starttime();
+      });
+
+      function starttime() {
+        if (timer) {
+          count++;
+          if (count > 10) {
+            timer = false;
+          }
+          let countString = count;
+          document.getElementById("timer").innerHTML = countString;
+          setTimeout(starttime, 10);
+        }
+      }
+    </script>
+  </body>
+</html>

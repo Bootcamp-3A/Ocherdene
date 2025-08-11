@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input" />
+
+      <button id="button1">10</button>
+      <button id="button2">20</button>
+      <button id="button3">30</button>
+      <input type="text" id="input3" /> Tip nemegdsen tulbur
+    </div>
+    <script>
+      let input = document.getElementById("input");
+
+      let button1 = document.getElementById("button1");
+      let button2 = document.getElementById("button2");
+      let button3 = document.getElementById("button3");
+      let input3 = document.getElementById("input3");
+
+      let num = parseInt(input.value);
+
+      button1.addEventListener("click", () => {
+        let newvalue = (parseInt(input.value) / 100) * 10;
+
+        input3.value = parseInt(input.value) + newvalue;
+      });
+
+      button2.addEventListener("click", () => {
+        let newvalue = (parseInt(input.value) / 100) * 20;
+
+        input3.value = parseInt(input.value) + newvalue;
+      });
+
+      button3.addEventListener("click", () => {
+        let newvalue = (parseInt(input.value) / 100) * 30;
+
+        input3.value = parseInt(input.value) + newvalue;
+      });
+    </script>
+  </body>
+</html>

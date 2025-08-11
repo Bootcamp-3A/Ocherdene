@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-image: url(galaxy.jpg);
+    }
+    .galaxy_container {
+      position: relative;
+      height: 1500px;
+      width: 1500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      height: 1300px;
+      width: 1300px;
+      border-radius: 50%;
+      border: 1px dashed white;
+      animation: rotate 10s infinite;
+      position: absolute;
+    }
+    .container2 {
+      height: 1100px;
+      width: 1100px;
+      border-radius: 50%;
+      border: 1px dashed white;
+      animation: rotate 20s infinite;
+      position: absolute;
+    }
+    .container3 {
+      height: 900px;
+      width: 900px;
+      border-radius: 50%;
+      border: 1px dashed white;
+      animation: rotate 10s infinite;
+      position: absolute;
+    }
+    .container4 {
+      height: 700px;
+      width: 700px;
+      border-radius: 50%;
+      border: 1px dashed white;
+      animation: rotate 30s infinite;
+      position: absolute;
+    }
+    .container5 {
+      height: 500px;
+      width: 500px;
+      border-radius: 50%;
+      border: 1px dashed white;
+      animation: rotate 10s infinite;
+      position: absolute;
+    }
+    .container6 {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      border: 1px dashed white;
+      animation: rotate 50s infinite;
+      position: absolute;
+    }
+    .container7 {
+      background-image: url(sun.jpg);
+      background-position: center;
+      background-size: cover;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+
+      animation: rotate 100s infinite;
+      position: absolute;
+    }
+
+    .earth {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: 190px;
+      left: 100px;
+      background-image: url(earth2.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    .earth2 {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: 180px;
+      left: 100px;
+      background-image: url(earth6.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    .earth3 {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: 55px;
+      right: 100px;
+      background-image: url(earth5.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    .earth4 {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: 0px;
+      left: 170px;
+      background-image: url(earth4.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    .earth5 {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: -50px;
+      right: 170px;
+      background-image: url(earth.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    .earth6 {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: -10px;
+      left: 170px;
+      background-image: url(earth3.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    .earth7 {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+
+      animation: rotate 10s infinite;
+      position: absolute;
+      top: -10px;
+      right: 0px;
+      background-image: url(earth7.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="galaxy_container">
+      <div class="container"><div class="earth"></div></div>
+      <div class="container2"><div class="earth2"></div></div>
+      <div class="container3"><div class="earth3"></div></div>
+      <div class="container4"><div class="earth4"></div></div>
+      <div class="container5"><div class="earth5"></div></div>
+      <div class="container6"><div class="earth6"></div></div>
+      <div class="container7"><div class="earth7"></div></div>
+    </div>
+  </body>
+</html>
