@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Start</button>
+    <script>
+      data = [{ head: "Heading", Buttons: ["3", "4", "22", "undefined"] }];
+      let body = document.querySelector("body");
+      let button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        button.remove();
+        let h1 = document.createElement("h1");
+        h1.innerText = "hello";
+        body.appendChild(h1);
+        new Array(4).fill(0).forEach((element) => {
+          let button2 = document.createElement("button");
+          body.appendChild(button2);
+        });
+      });
+    </script>
+  </body>
+</html>

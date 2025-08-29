@@ -1,0 +1,26 @@
+<body>
+  <div id="counter">0</div>
+  <button class="button" onclick="startTimer()">Start</button>
+  <button class="button" onclick="stopTime()">Stop</button>
+  <script>
+    const counterDiv = document.getElementById("counter");
+    let second = 0;
+    counterDiv.innerText = second;
+
+    function addSecond() {
+      second++;
+
+      counterDiv.innerText = second;
+    }
+
+    let interval = setInterval(addSecond, 1000);
+
+    function stopTime() {
+      clearInterval(interval);
+    }
+
+    function startTimer() {
+      interval = setInterval(addSecond, 1000);
+    }
+  </script>
+</body>

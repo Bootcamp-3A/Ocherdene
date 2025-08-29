@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom task</title>
+  </head>
+  <body>
+    <!-- Task1 -->
+    <h1>Change text</h1>
+    <span id="span">Hello there</span>
+    <div style="padding-top: 20px">
+      <button id="button">Change to "Hi there"</button>
+    </div>
+    <h1>Change background color</h1>
+    <!-- Task1end -->
+    <!-- Task2 -->
+    <div
+      id="colordiv"
+      style="height: 150px; width: 500px; background-color: aqua"
+    ></div>
+    <button style="margin-top: 20px" id="button2">Change color</button>
+    <!-- Task2end -->
+    <!-- Task3 -->
+    <div id="lidiv">
+      <h1>Add list item</h1>
+      <ul id="ul">
+        <li>Apple</li>
+      </ul>
+      <button id="button3">Add banana</button>
+    </div>
+    <!-- Task3end -->
+    <!-- Task4 -->
+    <div>
+      <h1>Hide show element</h1>
+      <p id="paragraph">You can hide and show me</p>
+      <button id="button4">Hide/show</button>
+    </div>
+    <!-- Task4end -->
+    <!-- Task5 -->
+    <div>
+      <h1>Count button clicks</h1>
+      <p id="count">Clicked 0 time</p>
+      <button id="button5">Click me</button>
+    </div>
+    <!-- Task5end -->
+    <!-- Task6 -->
+    <div>
+      <h1>Filter numbers >5</h1>
+      <p id="filter"></p>
+      <button id="button6">Show numbers >5</button>
+    </div>
+    <!-- Task6end -->
+    <div
+      id="randomcolor"
+      style="height: 200px; width: 200px; background-color: aqua"
+    >
+      <h1>Random background color</h1>
+      <button id="button7">Change color</button>
+    </div>
+    <div>
+      <h1>Add item from input</h1>
+      <ul id="ul2"></ul>
+      <input id="input4" type="text" />
+      <button id="button8">add</button>
+    </div>
+    <div>
+      <h1>Sort numbers</h1>
+      <span id="span1"></span>
+      <div>
+        <button id="button9">Sorting</button>
+      </div>
+      <span id="span2"></span>
+      <div>
+        <h1>Live Character Counter</h1>
+        <input type="text" name="" id="input5" />
+        <span id="span4"></span>
+      </div>
+    </div>
+    <div>
+      <h1>Dropdown filter</h1>
+      <select name="" id="select">
+        <option value="Vegetables">Vegetables</option>
+        <option value="Friut">Friut</option>
+        <option value="All">All</option>
+      </select>
+      <ul id="lastul"></ul>
+    </div>
+    <div>
+      <h1>Click to remove item</h1>
+      <ul id="lastlist2">
+        <li id="list1">One</li>
+        <li id="list2">Two</li>
+        <li id="list3">Three</li>
+      </ul>
+    </div>
+    <div>
+      <h1>CLick to remove item</h1>
+      <ul id="ul20"></ul>
+      <input type="text" name="" id="input20" />
+      <button id="button20">Button</button>
+    </div>
+
+    <script>
+      //   Task1///
+      let input = document.getElementById("span");
+      let button = document.getElementById("button");
+      button.addEventListener("click", () => {
+        input.innerText = "Hi there";
+      });
+      //   Task1end///
+      //   Task2///
+      let colordiv = document.getElementById("colordiv");
+      let button2 = document.getElementById("button2");
+      button2.addEventListener("click", () => {
+        colordiv.style.backgroundColor = "grey";
+      });
+      //   Task2end///
+      //   Task3///
+      let ulbtn = document.getElementById("ul");
+
+      let button3 = document.getElementById("button3");
+
+      button3.addEventListener("click", () => {
+        let libtn = document.createElement("li");
+        libtn.innerHTML = "Banana";
+        ulbtn.appendChild(libtn);
+      });
+      //   Task3end///
+      //   Task4///
+      let para = document.getElementById("paragraph");
+      let button4 = document.getElementById("button4");
+      let hide = true;
+      button4.addEventListener("click", () => {
+        hide = !hide;
+        if (hide) {
+          para.innerText = "You can hide and show me";
+        } else {
+          para.innerText = " ";
+        }
+      });
+      //   Task4end///
+      //   Task5///
+      let count = document.getElementById("count");
+      let button5 = document.getElementById("button5");
+      realcount = 0;
+      button5.addEventListener("click", () => {
+        realcount++;
+        count.innerText = "Clicked " + realcount + " times";
+      });
+      //   Task5end///
+      //   Task6///
+      let filterleharr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let arr = document.getElementById("filter");
+      let button6 = document.getElementById("button6");
+      button6.addEventListener("click", () => {
+        let newfilteredarr = filterleharr.filter((el) => {
+          return el > 5;
+        });
+        arr.innerText = newfilteredarr;
+      });
+      //   Task6end///
+      let div = document.getElementById("randomcolor");
+      let button7 = document.getElementById("button7");
+      colors = ["red", "blue", "black", "brown", "aqua", "gray", "white"];
+      count2 = 0;
+      button7.addEventListener("click", () => {
+        div.style.backgroundColor = colors[count2];
+        count2++;
+        if (count2 > colors.length) {
+          count2 = 0;
+        }
+      });
+      let inpt = document.getElementById("input4");
+      let button8 = document.getElementById("button8");
+      let ul2 = document.getElementById("ul2");
+      button8.addEventListener("click", () => {
+        let li = document.createElement("li");
+        li.innerText = inpt.value;
+        ul2.appendChild(li);
+      });
+      let span = document.getElementById("span1");
+      let span2 = document.getElementById("span2");
+      let button9 = document.getElementById("button9");
+
+      Anynumbers = [10, 5, 11, 14, 3, 1];
+      span.innerText = Anynumbers;
+      button9.addEventListener("click", () => {
+        let sorted = Anynumbers.sort((a, b) => {
+          return a - b;
+        });
+        span2.innerText = "Sorted numbers " + sorted;
+      });
+      let input5 = document.getElementById("input5");
+      let input6 = document.getElementById("span4");
+      let button10 = document.getElementById("button10");
+      let newarr = [];
+      input5.addEventListener("change", () => {
+        newarr = input5.value;
+
+        input6.innerText = "Characters " + newarr.length;
+      });
+      let select = document.getElementById("select");
+      let lastul = document.getElementById("lastul");
+
+      let arr2 = [
+        { name: "Apple", category: "Friut" },
+        { name: "Banana", category: "Friut" },
+        { name: "Pomidor", category: "Vegetables" },
+        { name: "Carrot", category: "Vegetables" },
+        { name: "Orange", category: "Friut" },
+      ];
+      select.addEventListener("change", () => {
+        lastul.innerHTML = "";
+        let filteredarr = arr2.filter((friut) => {
+          if (friut.category === select.value) {
+            let li = document.createElement("li");
+            li.innerText = friut.name;
+            lastul.appendChild(li);
+          }
+        });
+        arr2.map((friut) => {
+          if (select.value === "All") {
+            let li = document.createElement("li");
+            li.innerText = friut.name;
+            lastul.appendChild(li);
+          }
+        });
+      });
+
+      //   lastlist = document.getElementById("lastlist2");
+      //   button14 = document.getElementById("button14");
+      //   button14.addEventListener("click", () => {
+      //     let lit = document.createElement("li");
+      //     lit.innerHTML = "One";
+      //     lastlist.appendChild(lit);
+      //     lit.addEventListener("click", () => {
+      //       lit.innerText = " ";
+      //       lastlist.innerHTML = "";
+      //     });
+      //   });
+      let liit = document.getElementById("list1");
+      liit.addEventListener("click", () => {
+        liit.remove();
+      });
+      let liit2 = document.getElementById("list2");
+      liit2.addEventListener("click", () => {
+        liit2.remove();
+      });
+      let liit3 = document.getElementById("list3");
+      liit3.addEventListener("click", () => {
+        liit3.remove();
+      });
+      let ul20 = document.getElementById("ul20");
+
+      let input20 = document.getElementById("input20");
+      let button20 = document.getElementById("button20");
+      negarr = [];
+      let inputavahfunction = (value) => {
+        negarr.push(value);
+      };
+      function render() {
+        ul20.innerHTML = " ";
+        negarr.map((element, i) => {
+          let li20 = document.createElement("li");
+
+          li20.innerText = element;
+          li20.addEventListener("click", () => {});
+
+          ul20.appendChild(li20);
+        });
+      }
+      button20.addEventListener("click", () => {
+        inputavahfunction(input20.value);
+        render();
+        input20.value = " ";
+      });
+    </script>
+  </body>
+</html>

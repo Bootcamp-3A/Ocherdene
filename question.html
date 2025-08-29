@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Start</button>
+    <script>
+      const data = [
+        {
+          question: "What is the output of 2 + 2 in JavaScript?",
+          options: ["3", "4", "22", "undefined"],
+          correctAnswer: "4",
+        },
+        {
+          question:
+            "Which keyword is used to declare a variable in JavaScript?",
+          options: ["let", "var", "const", "All of the above"],
+          correctAnswer: "All of the above",
+        },
+        {
+          question: "Which symbol is used for comments in JavaScript?",
+          options: ["//", "<!-- -->", "#", "/* */"],
+          correctAnswer: "//",
+        },
+        {
+          question: "What is the output of 2 + 2 in JavaScript?",
+          options: ["3", "4", "22", "undefined"],
+          correctAnswer: "4",
+        },
+        {
+          question:
+            "Which keyword is used to declare a variable in JavaScript?",
+          options: ["let", "var", "const", "All of the above"],
+          correctAnswer: "All of the above",
+        },
+        {
+          question: "Which symbol is used for comments in JavaScript?",
+          options: ["//", "<!-- -->", "#", "/* */"],
+          correctAnswer: "//",
+        },
+        {
+          question: "What is the output of 2 + 2 in JavaScript?",
+          options: ["3", "4", "22", "undefined"],
+          correctAnswer: "4",
+        },
+        {
+          question:
+            "Which keyword is used to declare a variable in JavaScript?",
+          options: ["let", "var", "const", "All of the above"],
+          correctAnswer: "All of the above",
+        },
+        {
+          question: "Which symbol is used for comments in JavaScript?",
+          options: ["//", "<!-- -->", "#", "/* */"],
+          correctAnswer: "//",
+        },
+        {
+          question: "What is the output of 2 + 2 in JavaScript?",
+          options: ["3", "4", "22", "undefined"],
+          correctAnswer: "4",
+        },
+        {
+          question:
+            "Which keyword is used to declare a variable in JavaScript?",
+          options: ["let", "var", "const", "All of the above"],
+          correctAnswer: "All of the above",
+        },
+        {
+          question: "Which symbol is used for comments in JavaScript?",
+          options: ["//", "<!-- -->", "#", "/* */"],
+          correctAnswer: "//",
+        },
+      ];
+
+      const body = document.querySelector("body");
+      const strtbutton = document.querySelector("button");
+      let currentindex = 0;
+      let point = 0;
+
+      let quizstart = () => {
+        strtbutton.remove();
+        const quistion = document.createElement("h1");
+        const count = document.createElement("p");
+        count.innerText = `${currentindex}/${data.length}`;
+        body.appendChild(quistion);
+        body.appendChild(count);
+        [1, 2, 3, 4].forEach((element, i) => {
+          const btn = document.createElement("button");
+          body.appendChild(btn);
+          btn.addEventListener("click", () => {
+            currentindex++;
+            quistion.innerText = data[currentindex].question;
+            const answerbtns = document.querySelectorAll("button");
+            count.innerText = `${currentindex}/${data.length}`;
+            console.log(point);
+            if (
+              data[currentindex].correctAnswer === data[currentindex].options[i]
+            ) {
+              point++;
+            }
+            answerbtns.forEach(
+              (btn, index) =>
+                (btn.innerText = data[currentindex].options[index])
+            );
+          });
+        });
+        const drawquestion = () => {
+          const answerbtns = document.querySelectorAll("button");
+
+          answerbtns.forEach(
+            (btn, index) => (btn.innerText = data[currentindex].options[index])
+          );
+          quistion.innerText = data[currentindex].question;
+        };
+        drawquestion();
+      };
+
+      strtbutton.addEventListener("click", quizstart);
+    </script>
+  </body>
+</html>

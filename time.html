@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime</title>
+  </head>
+  <body>
+    <div style="display: flex">
+      <p id="para"></p>
+      <p id="para2"></p>
+    </div>
+    <script>
+      function reallocaldate() {
+        const date = new Date().toString();
+        let localdate = date.split(" ")[4];
+
+        para = document.getElementById("para");
+        para.innerText = localdate;
+      }
+      function milisecond() {
+        let mili = new Date().getMilliseconds();
+        para2 = document.getElementById("para2");
+        para2.innerText = ":" + mili;
+      }
+
+      setInterval(reallocaldate, 1000);
+      setInterval(milisecond, 99);
+    </script>
+  </body>
+</html>
+  let arr = [
+        {
+          Answer: "Any question",
+          Select: [1, 2, 3, 4],
+          correct: [2],
+        },
+      ];
+          let para1 = document.createElement("p");
+      para1.innerText = "Question";
+      let button2 = document.createElement("button");
+      let button3 = document.createElement("button");
+      let button4 = document.createElement("button");
+      let button5 = document.createElement("button");
+
+      div.appendChild(para1);
+      div.appendChild(button2);
+      div.appendChild(button3);
+      div.appendChild(button4);
+      div.appendChild(button5);
+    </script>
+           div2 = document.createElement("div");
+          div2.className = "div2";
+          para1 = document.createElement("h1");
+          para1.innerText = "any";
+
+          button5 = document.createElement("button");
+          button5.innerText = "Answer 1";
+          button6 = document.createElement("button");
+          button6.innerText = "Answer 2";
+          button7 = document.createElement("button");
+          button7.innerText = "Answer 3";
+          button8 = document.createElement("button");
+          button8.innerText = "Answer 4";
+
+          body.appendChild(div2);
+          div2.appendChild(para1);
+          div2.appendChild(button5);
+          div2.appendChild(button6);
+          div2.appendChild(button7);
+          div2.appendChild(button8);
+
+            button2 = document.createElement("button");
+            button2.innerText = arr.Select[0];
+            button3 = document.createElement("button");
+            button3.innerText = arr.Select[1];
+            button4 = document.createElement("button");
+            button4.innerText = arr.Select[2];
+            button5 = document.createElement("button");
+            button5.innerText = arr.Select[3];

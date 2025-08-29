@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style></style>
   <body>
-    <div>
+    <div
+      style="
+        height: 500px;
+        width: 500px;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
       <input type="text" id="input" />
-
-      <button id="button1">10</button>
-      <button id="button2">20</button>
-      <button id="button3">30</button>
-      <input type="text" id="input3" /> Tip nemegdsen tulbur
+      <div>
+        <button id="button1">10</button>
+        <button id="button2">20</button>
+        <button id="button3">30</button>
+      </div>
+      <input type="text" id="input3" /> Tip nemegdsen dun
     </div>
     <script>
       let input = document.getElementById("input");

@@ -5,32 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stopwatch</title>
   </head>
-  <body>
-    <span id="timer">00</span>
-    <button id="startbtn">Start</button>
-    <button>Stop</button>
-    <button>Reset</button>
+  <body style="background-color: gray">
+    <div id="containerdiv">
+      <span id="span1"></span>
+      <span id="span2"></span>
+      <span id="span3"></span>
+      <button class="button" onclick="startTimer()">Start</button>
+      <button class="button" onclick="stopTime()">Stop</button>
+      <button class="button" onclick="resetTime()">reset</button>
+    </div>
+
     <script>
-      let button = document.getElementById("startbtn");
-      let timer = document.getElementById("timer");
-      let count = "00";
+      let div = document.getElementById("containerdiv");
+      let span = document.getElementById("span1");
+      let span2 = document.getElementById("span2");
+      let span3 = document.getElementById("span3");
+      let second = "00";
+      let minute = "00";
+      let hour = "00";
+      span.innerText = hour;
+      span2.innerText = minute;
+      span3.innerText = second;
 
-      button.addEventListener("click", () => {
-        timer = true;
-
-        starttime();
-      });
-
-      function starttime() {
-        if (timer) {
-          count++;
-          if (count > 10) {
-            timer = false;
-          }
-          let countString = count;
-          document.getElementById("timer").innerHTML = countString;
-          setTimeout(starttime, 10);
+      function addsecond() {
+        second++;
+        if (second === 12) {
+          minute++;
+          second = 0;
         }
+        if (minute === 2) {
+          hour++;
+          minute = 0;
+        }
+
+        span.innerText = hour + "hour";
+        span2.innerText = minute + "min";
+        span3.innerText = second + "sec";
+        if (second < 10) {
+          span3.innerText = "0" + second + "sec";
+        }
+      }
+      let interval;
+      function startTimer() {
+        clearInterval(interval);
+        interval = setInterval(addsecond, 1000);
+      }
+      function stopTime() {
+        clearInterval(interval);
+      }
+
+      function resetTime() {
+        clearInterval(interval);
+        second = 0;
+        minute = 0;
+        hour = 0;
+        span.innerText = 0;
+        span2.innerText = 0;
+        span3.innerText = 0;
       }
     </script>
   </body>
